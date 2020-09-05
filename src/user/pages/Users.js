@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-
+import UsersList from "../components/UsersList";
 class Users extends Component {
+  users = [
+    {
+      id: "u1",
+      name: "Jay-Z",
+      image:
+        "https://i.insider.com/5e3b33270ce3d15c650b3ced?width=600&format=jpeg&auto=webp",
+      places: 3,
+    },
+  ];
   render() {
-    return (
-      <div>
-        <h1>Welcome Users Page</h1>
-      </div>
-    );
+    return <UsersList users={this.users} />;
   }
 }
 
