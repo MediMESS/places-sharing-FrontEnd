@@ -6,21 +6,25 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import NewPlace from "./places/pages/NewPlace";
 import Users from "./user/pages/Users";
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/places/newPlace" exact>
-          <NewPlace />
-        </Route>
-        <Route path="/" exact>
-          <Users />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/places/newPlace" exact>
+            <NewPlace />
+          </Route>
+          <Route path="/" exact>
+            <Users />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </Router>
   );
 }
