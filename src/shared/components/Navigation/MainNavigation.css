@@ -1,0 +1,31 @@
+.main-navigation__menu-btn {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background: transparent;
+  margin-right: 2.5rem;
+}
+.main-navigation__menu-btn span {
+  display: block;
+  background: white;
+  width: 3rem;
+  height: 2.5px;
+}
+
+.main-navigation__title {
+  color: white;
+}
+.main-navigation__title a {
+  color: white;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .main-navigation__menu-btn {
+    display: none;
+  }
+}
