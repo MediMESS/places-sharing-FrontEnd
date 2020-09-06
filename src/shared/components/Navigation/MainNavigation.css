@@ -29,3 +29,8 @@
     display: none;
   }
 }
+@media (min-width: 200px) {
+  .main-navigation__menu-btn {
+    display: none;
+  }
+}
