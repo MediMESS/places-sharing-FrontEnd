@@ -16,12 +16,8 @@ function App() {
       <MainNavigation />
       <main>
         <Switch>
-          <Route path="/places/new" exact>
-            <NewPlace />
-          </Route>
-          <Route path="/" exact>
-            <Users />
-          </Route>
+          <Route path="/places/new" exact component={NewPlace} />
+          <Route path="/" exact component={Users} />
           <Redirect to="/" />
         </Switch>
       </main>
