@@ -20,9 +20,8 @@ function App() {
           <Route path="/places/new" exact>
             <NewPlace />
           </Route>
-          <Route path="/:userId/places">
-            <UserPlaces />
-          </Route>
+
+          <Route path="/:userId/places" component={UserPlaces} />
           <Route path="/" exact>
             <Users />
           </Route>
