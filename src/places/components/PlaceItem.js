@@ -1,15 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 
-class PlaceItem extends Component {
-  render(props) {
-    return (
-      <li className="place-item">
+import "./PlaceItem.css";
+import Card from "../../shared/components/UIElements/Card";
+import Button from "../../shared/components/FormElements/Button";
+const PlaceItem = (props) => {
+  return (
+    <li className="place-item">
+      <Card className="place-item__content">
         <div className="place-item__image">
           <img src={props.image} alt={props.title} />
         </div>
-      </li>
-    );
-  }
-}
+        <div className="place-item__info tc">
+          <h2>{props.title}</h2>
+          <h2>{props.address}</h2>
+          <p>{props.description}</p>
+        </div>
+
+        <div className="place-item__actions">
+          <Button inverse>View On Map</Button>
+          <Button to={`/places/${props.id}`}>Edit</Button>
+          <Button danger>DELETE</Button>
+        </div>
+      </Card>
+    </li>
+  );
+};
 
 export default PlaceItem;
