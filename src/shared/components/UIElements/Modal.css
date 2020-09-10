@@ -1,0 +1,9 @@
+.modal {
+  position: fixed;
+  width: 80%;
+  top: 22vh;
+  left: 10%;
+  border-raius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
+  background: white;
+}
