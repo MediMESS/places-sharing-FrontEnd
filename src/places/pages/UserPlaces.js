@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import PlacesList from "../components/PlacesList";
+import Modal from "../../shared/components/UIElements/Modal";
 class UserPlaces extends Component {
   places = [
     {
