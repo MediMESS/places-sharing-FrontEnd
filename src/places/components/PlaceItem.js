@@ -25,7 +25,7 @@ const PlaceItem = (props) => {
         footerClass="place-item__modal-actions"
         footer={<Button onClick={closeModalHandler}>Close Map</Button>}
       >
-        <div className="map-container"></div>
+        <div className="map-container">Map</div>
       </Modal>
       <li className="place-item">
         <Card className="place-item__content">
