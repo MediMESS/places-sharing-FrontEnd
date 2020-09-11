@@ -15,9 +15,9 @@ const ModalOverlay = (props) => {
         onSubmit={props.onSubmit ? props.onSubmit : (e) => e.preventDefault()}
       >
         <div className={`modal__content ${props.modalClass}`}>
-          {props.children} f
+          {props.children}
         </div>
-        <footer classNames={`modal__footer ${props.footerClass}`}>
+        <footer className={`modal__footer ${props.footerClass}`}>
           {props.footer}
         </footer>
       </form>
@@ -30,6 +30,7 @@ const ModalOverlay = (props) => {
 };
 
 const Modal = (props) => {
+  console.log(props.show);
   return (
     <React.Fragment>
       {props.show && <Backdrop onClick={props.cancel} />}
@@ -38,7 +39,7 @@ const Modal = (props) => {
         timeout={300}
         classNames="modal"
         mountOnEnter
-        umountOnExit
+        unmountOnExit
       >
         <ModalOverlay {...props} />
       </CSSTransition>
