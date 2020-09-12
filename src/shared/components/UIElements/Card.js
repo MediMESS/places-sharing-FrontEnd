@@ -1,5 +1,6 @@
 import React from "react";
 import "./Card.css";
+import CSSTransition from "react-transition-group";
 
 const Card = (props) => {
   return (
