@@ -4,48 +4,65 @@ import PlacesList from "../components/PlacesList";
 class UserPlaces extends Component {
   places = [
     {
-      id: "u1",
+      id: "p1",
       title: "Bora Bora",
-      imageUrl:
-        "https://www.wendyperrin.com/wp-content/uploads/2018/02/17-12-Brando-Suites-Bora-Bora-aerial-view-CR-Brando-Suites-1000x667.jpg",
-      description: "Very Beautiful #1 Place",
+      address: "Indonesia, Dora Bora",
+      description: " very #1 beautiful place",
+
       location: {
-        lat: 34,
-        long: 55,
+        longitude: 289.098,
+        latitude: 32.23,
       },
+      imageUrl:
+        "https://i.pinimg.com/originals/94/b0/ca/94b0caaed79d45f4ded9178a5876d91e.jpg",
       creator: "u1",
-      address: "Very Beautiful Place number #1",
     },
     {
-      id: "u2",
-      title: "Sydney",
-      imageUrl:
-        "https://australie-a-la-carte.com/fichier/p_entete/17196/entete_img_australie_new_south_wales_sydney_harbour_150418_dnsw.jpg",
-      description: "Very Beautiful #2 Place",
+      id: "p2",
+      title: "Kashmir valley",
+      address: "Pakistan takiminian",
+      description: " very #2 beautiful place",
+
       location: {
-        lat: 34,
-        long: 55,
+        longitude: 23.8,
+        latitude: -1221.12,
       },
-      creator: "u3",
-      address: "address place number #2",
+      imageUrl:
+        "https://i.pinimg.com/originals/49/82/fe/4982fe7251384fcb452dd83329ecbc78.png",
+      creator: "u1",
     },
     {
-      id: "u3",
-      title: "Miami",
-      imageUrl:
-        "https://mansion-global-app.s3.amazonaws.com/stories/new-luxury-developments-spring-2018-miami/media/miamishorthand_lead-mr.jpg",
-      description: "Very Beautiful #3 Place",
+      id: "p3",
+      title: "Scandinave country",
+      description: " very #3 beautiful place",
+
+      address: "scandinavia",
       location: {
-        lat: 34,
-        long: 55,
+        longitude: -534.123,
+        latitude: -12.44,
       },
+      imageUrl:
+        "https://www.etravel.com/eTravelImages/ArticleContentImage/0_39_97.jpg",
+      creator: "u1",
+    },
+    {
+      id: "p4",
+      title: "Scandinave country2",
+      description: " very #4 beautiful place",
+      address: "scandinavia2",
+      location: {
+        longitude: -534.123,
+        latitude: -12.44,
+      },
+      imageUrl:
+        "https://www.etravel.com/eTravelImages/ArticleContentImage/0_39_97.jpg",
       creator: "u2",
-      address: "address place number #1",
     },
   ];
-
   render() {
-    return <PlacesList places={this.places} />;
+    const { userId } = this.props.match.params;
+    const places = this.places.filter((p) => p.creator === userId);
+    return <PlacesList places={places} />;
   }
 }
 
