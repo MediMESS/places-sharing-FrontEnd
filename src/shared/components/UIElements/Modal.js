@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./Modal.css";
 import Backdrop from "../UIElements/Backdrop";
 import { CSSTransition } from "react-transition-group";
+
 const ModalOverlay = (props) => {
   const modalOverlayNode = (
     <div className={`modal ${props.className}`} style={props.style}>
@@ -30,7 +31,6 @@ const ModalOverlay = (props) => {
 };
 
 const Modal = (props) => {
-  console.log(props.show);
   return (
     <React.Fragment>
       {props.show && <Backdrop onClick={props.cancel} />}
