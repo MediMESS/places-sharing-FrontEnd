@@ -8,6 +8,7 @@
   flex-direction: column;
   background: transparent;
   margin-right: 2.5rem;
+  outline: none;
 }
 .main-navigation__menu-btn span {
   display: block;
