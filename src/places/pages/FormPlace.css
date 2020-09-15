@@ -1,0 +1,10 @@
+.place-form {
+  list-style: none;
+  width: 90%;
+  max-width: 40rem;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 0 auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
+  background: white;
+}
