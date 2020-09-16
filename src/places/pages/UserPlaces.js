@@ -1,67 +1,26 @@
 import React, { Component } from "react";
 
+import { DUMMY_PLACES } from "./places";
+import Card from "../../shared/components/UIElements/Card";
+import Button from "../../shared/components/FormElements/Button";
 import PlacesList from "../components/PlacesList";
+
 class UserPlaces extends Component {
-  places = [
-    {
-      id: "p1",
-      title: "Bora Bora",
-      address: "Indonesia, Dora Bora",
-      description: " very #1 beautiful place",
-
-      location: {
-        longitude: 289.098,
-        latitude: 32.23,
-      },
-      imageUrl:
-        "https://i.pinimg.com/originals/94/b0/ca/94b0caaed79d45f4ded9178a5876d91e.jpg",
-      creator: "u1",
-    },
-    {
-      id: "p2",
-      title: "Kashmir valley",
-      address: "Pakistan takiminian",
-      description: " very #2 beautiful place",
-
-      location: {
-        longitude: 23.8,
-        latitude: -1221.12,
-      },
-      imageUrl:
-        "https://i.pinimg.com/originals/49/82/fe/4982fe7251384fcb452dd83329ecbc78.png",
-      creator: "u1",
-    },
-    {
-      id: "p3",
-      title: "Scandinave country",
-      description: " very #3 beautiful place",
-
-      address: "scandinavia",
-      location: {
-        longitude: -534.123,
-        latitude: -12.44,
-      },
-      imageUrl:
-        "https://www.etravel.com/eTravelImages/ArticleContentImage/0_39_97.jpg",
-      creator: "u1",
-    },
-    {
-      id: "p4",
-      title: "Scandinave country2",
-      description: " very #4 beautiful place",
-      address: "scandinavia2",
-      location: {
-        longitude: -534.123,
-        latitude: -12.44,
-      },
-      imageUrl:
-        "https://www.etravel.com/eTravelImages/ArticleContentImage/0_39_97.jpg",
-      creator: "u2",
-    },
-  ];
   render() {
     const { userId } = this.props.match.params;
-    const places = this.places.filter((p) => p.creator === userId);
+    const places = DUMMY_PLACES.filter((p) => p.creator === userId);
+
+    if (places.length === 0) {
+      return (
+        <div className="center">
+          <Card>
+            <h1>No Places found</h1>
+            <p>Wanna share one?</p>
+            <Button to="/places/new">Share Place</Button>
+          </Card>
+        </div>
+      );
+    }
     return <PlacesList places={places} />;
   }
 }
