@@ -31,6 +31,7 @@ const PlaceItem = (props) => {
     console.log("DELETING");
     closeWarningDeleteModal();
   };
+
   return (
     <React.Fragment>
       <Modal
