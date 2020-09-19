@@ -5,6 +5,7 @@ import Input from "../../shared/components/FormElements/Input";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
+  VALIDATOR_MAXLENGTH,
 } from "../../shared/util/validators";
 import "./FormPlace.css";
 import Button from "../../shared/components/FormElements/Button";
@@ -95,7 +96,11 @@ const UpdatePlace = (props) => {
         label="Description"
         element="input"
         type="text"
-        validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
+        validators={[
+          VALIDATOR_REQUIRE(),
+          VALIDATOR_MINLENGTH(5),
+          VALIDATOR_MAXLENGTH(100),
+        ]}
         errorText="Please enter a valid title"
         initialValue={formState.inputs.description.value}
         initialIsValid={formState.inputs.description.isValid}
