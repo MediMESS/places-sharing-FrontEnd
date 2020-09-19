@@ -4,6 +4,7 @@ import useForm from "../../shared/hooks/form-hook";
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
+  VALIDATOR_MAXLENGTH,
 } from "../../shared/util/validators";
 import "./FormPlace.css";
 import Input from "../../shared/components/FormElements/Input";
@@ -52,7 +53,11 @@ const NewPlace = () => {
         id="description"
         label="Description"
         element="textarea"
-        validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(5)]}
+        validators={[
+          VALIDATOR_REQUIRE(),
+          VALIDATOR_MINLENGTH(5),
+          VALIDATOR_MAXLENGTH(100),
+        ]}
         errorText="Please enter a valid description with minimum 5 characters"
         onInput={inputHandler}
       />
